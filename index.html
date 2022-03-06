@@ -1,0 +1,218 @@
+<html>
+  <head>
+    <title>Weight in Space</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+    <center>
+      <h2>Weight in Space</h2>
+      <br>
+    <div> <h4>Enter your weight in pounds: <input id="weight" type="number"> <button onclick="weight()">Enter</button> <span id="done"></span> </h4>
+    <div class="page-header col-lg-12 col-md-12 col-sm-12 col-xs-12"><h4 class="text-capitalize"> Click the planets to know your weight on them!</h4></div>
+    </div>center>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#sun">
+    <img src="sun.png" class="img-responsive" style="width: 200px; height: 200px;">
+        <hr>
+    <p class="text-primary">Sun</p>
+    </div>
+    <div class="modal fade" id="sun">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"> &times; 
+            </button>
+            <h4 class="modal-title"> Sun</h4>
+            </div>
+            <div class="modal-body">
+            <img src="sun.png" style="width: 250px; height: 250px; class="img-responsive img_modal">
+            <p>Your weight on the sun: </p><span id="sun_weight"></span>
+            <p class="p_modal">Our solar system consists of a central star, the Sun. It has eight planets, five official "dwarf planets", and numerous asteroids, comets, and meteoroids. The planets in our solar system travel in a path around the sun called an orbit. The period of time for a planet to complete its orbit around the sun is called its year.</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#mercury">
+      <img src="mercury.png" class="img-responsive" style="width: 200px; height: 200px;">
+          <hr>
+      <p class="text-primary">Mercury</p>
+      </div>
+      <div class="modal fade" id="mercury">
+      <div class="modal-dialog">
+          <div class="modal-content">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal"> &times; 
+              </button>
+              <h4 class="modal-title">Mercury</h4>
+              </div>
+              <div class="modal-body">
+              <img src="mercury.png" style="width: 250px; height: 250px; class="img-responsive img_modal">
+              <p>Your weight on Mercury: </p><span id="mercury_weight"></span>
+              <p class="p_modal">The physical appearance of Mercury is very similar to our moon. It has a barren, rocky surface covered with many craters. Mercury just slightly larger than our moon.</p>
+              </div>
+          </div>
+          </div>
+      </div>
+
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#venus">
+        <img src="othervenus.jpg" class="img-responsive" style="width: 200px; height: 200px;">
+            <hr>
+        <p class="text-primary">Venus</p>
+        </div>
+        <div class="modal fade" id="venus">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"> &times; 
+                </button>
+                <h4 class="modal-title">Venus</h4>
+                </div>
+                <div class="modal-body">
+                <img src="othervenus.jpg" style="width: 250px; height: 250px; class="img-responsive img_modal">
+                <p>Your weight on Venus: </p><span id="venus_weight"></span>
+                <p class="p_modal">Even though Venus and Earth don't have much in common, Venus is sometimes called “Earth’s twin” because they are about the same size.</p>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#earth">
+          <img src="earth.jpg" class="img-responsive" style="width: 200px; height: 200px;">
+              <hr>
+          <p class="text-primary">Earth</p>
+          </div>
+          <div class="modal fade" id="earth">
+          <div class="modal-dialog">
+              <div class="modal-content">
+              <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal"> &times; 
+                  </button>
+                  <h4 class="modal-title">Earth</h4>
+                  </div>
+                  <div class="modal-body">
+                  <img src="earth.jpg" style="width: 250px; height: 250px; class="img-responsive img_modal">
+                  <p>Your weight on Earth: </p><span id="earth_weight"></span>
+                  <p class="p_modal">Earth is sometimes called the “goldilocks planet” because it’s not too hot and not too cold for life to thrive. It’s so far the only known planet that life exists on. Scientists are always trying to find if ton this planet is more life anywon this planet.</p>
+                  </div>
+              </div>
+              </div>
+          </div>
+
+          <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#mars">
+            <img src="mars.jpg" class="img-responsive" style="width: 200px; height: 200px;">
+                <hr>
+            <p class="text-primary">Mars</p>
+            </div>
+            <div class="modal fade" id="mars">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"> &times; 
+                    </button>
+                    <h4 class="modal-title">Mars</h4>
+                    </div>
+                    <div class="modal-body">
+                    <img src="mars.jpg" style="width: 250px; height: 250px; class="img-responsive img_modal">
+                    <p>Your weight on Mars: </p><span id="mars_weight"></span>
+                    <p class="p_modal">Mars is also known as the “red planet” because its surface contains high amounts of iron. This iron has reacted with oxygen to form a substance that is common on Earth, rust!</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#jupiter">
+              <img src="jupite.png" class="img-responsive" style="width: 200px; height: 200px;">
+                  <hr>
+              <p class="text-primary">Jupiter</p>
+              </div>
+              <div class="modal fade" id="jupiter">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal"> &times; 
+                      </button>
+                      <h4 class="modal-title">Jupiter</h4>
+                      </div>
+                      <div class="modal-body">
+                      <img src="jupite.png" style="width: 250px; height: 250px; class="img-responsive img_modal">
+                      <p>Your weight on Jupiter: </p><span id="jupiter_weight"></span>
+                      <p class="p_modal">Jupiter is the largest planet in the Solar System. Jupiter is often distinguished by its large “red spot”. This “red spot” is actually the largest hurricane in our solar system that has been raging for over 300 years.</p>
+                      </div>
+                  </div>
+                  </div>
+              </div>
+
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#saturn">
+                <img src="saturn.jpg" class="img-responsive" style="width: 350px; height: 200px;">
+                    <hr>
+                <p class="text-primary">Saturn</p>
+                </div>
+                <div class="modal fade" id="saturn">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"> &times; 
+                        </button>
+                        <h4 class="modal-title">Saturn</h4>
+                        </div>
+                        <div class="modal-body">
+                        <img src="saturn.jpg" class="img-responsive img_modal">
+                        <p>Your weight on Saturn: </p><span id="saturn_weight"></span>
+                        <p class="p_modal">Saturn is best known as the “ringed planet”. Its rings stretch out into space for thousands of miles and are made of ice crystals.</p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#uranus">
+                  <img src="hubble-uranus.jpg" class="img-responsive" style="width: 200px; height: 200px;">
+                      <hr>
+                  <p class="text-primary">Uranus</p>
+                  </div>
+                  <div class="modal fade" id="uranus">
+                  <div class="modal-dialog">
+                      <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal"> &times; 
+                          </button>
+                          <h4 class="modal-title">Uranus</h4>
+                          </div>
+                          <div class="modal-body">
+                          <img src="hubble-uranus.jpg" style="width: 250px; height: 250px; class="img-responsive img_modal">
+                          <p>Your weight on Uranus: </p><span id="uranus_weight"></span>
+                          <p class="p_modal">Uranus’ blue-ish-green-ish color comes from the methane that is in the atmosphere. Uranus is pretty much on its side which is why its rings are horizontal.</p>
+                          </div>
+                      </div>
+                      </div>
+                  </div>
+
+                  <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" data-toggle="modal" data-target="#neptune">
+                    <img src="neptune.png" class="img-responsive" style="width: 200px; height: 200px;">
+                        <hr>
+                    <p class="text-primary">Neptune</p>
+                    </div>
+                    <div class="modal fade" id="neptune">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal"> &times; 
+                            </button>
+                            <h4 class="modal-title">Neptune</h4>
+                            </div>
+                            <div class="modal-body">
+                            <img src="neptune.png" style="width: 250px; height: 250px; class="img-responsive img_modal">
+                            <p>Your weight on Neptune: </p><span id="neptune_weight"></span>
+                            <p class="p_modal">Neptune experiences freezing winds that blow about 10 times faster than hurricanes on Earth, making it the windiest and most violent planet in the solar system. Just like Uranus, Neptune also gets its color from all that frozen methane.</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    <script src="main.js"></script>
+      </body>
+      </html>
